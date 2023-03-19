@@ -1,4 +1,4 @@
-# HACBS Release bundles
+# HACBS-Release bundles
 
 HACBS Release bundles is a curated Tekton bundles catalog that contains bundles that are used by the
 [HACBS Release operator](https://github.com/redhat-appstudio/release-service) to process releases in the context of
