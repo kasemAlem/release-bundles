@@ -39,6 +39,10 @@ spec:
         #!/usr/bin/env bash
         set -eux
 
+        printf 'Debug get content of $HOME/.docker/config.json'
+        cat $HOME/.docker/config.json
+        printf 'End of debug'
+
         push_image () { # Expected arguments are [name, containerImage, repository, tag] from data array
           printf '* Pushing component: %s to %s:%s\n' "$1" "$3" "$4"
           skopeo copy \
@@ -49,7 +53,7 @@ spec:
             "docker://$2" \
             "docker://$3:$4"
         }
-
+        
         application=$(jq -r '.application' <<<'$(params.mappedSnapshot)')
         printf 'Beginning "%s" for "%s"\n\n' "$(context.task.name)" "$application"
         while read line;
